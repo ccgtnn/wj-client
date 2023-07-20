@@ -1,0 +1,25 @@
+# General
+node_modules/
+
+# Build
+/dist/
+/*.log
+
+# Dependencies
+npm-debug.log*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+.eclipse/
+.tmproj
+*.tmproject
+*.tmdirs
+
+# OS generated files
+.DS_Store
+Thumbs.db
