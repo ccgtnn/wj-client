@@ -1,7 +1,7 @@
 import { useIssuesStore } from '@/stores/journals/issues.store'
 import { computed, provide } from 'vue'
 
-export function usePrepIssues(options = {}) {
+export function usePrepIssuesByYears(options = {}) {
   const issuesStore = useIssuesStore()
 
   // Получаем все данные

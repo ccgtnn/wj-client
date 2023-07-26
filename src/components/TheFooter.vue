@@ -17,7 +17,7 @@
 
 <style scoped>
 footer {
-  @apply w-full p-4 bg-footer-bg text-footer-text;
+  @apply w-full p-4 bg-mainColors-footer-bg text-mainColors-footer-text;
 }
 .footer {
   @apply container mx-auto;

@@ -7,7 +7,7 @@ const yearsListCount = inject('issuesYearsListCount')
 </script>
 
 <template>
-  <div v-if="yearsListCount" class="issues-list">
+  <div class="issues-list">
     <div v-for="year in yearsList" :key="year.name">
       <AppH2>{{ year.name }}</AppH2>
       <IssuesItem
@@ -17,7 +17,7 @@ const yearsListCount = inject('issuesYearsListCount')
       />
     </div>
   </div>
-  <div v-else class="">ПОКА НЕТ ЗАГРУЖЕННЫХ ИЗДАНИЙ</div>
+  <div v-if="yearsListCount == 0" class="">ПОКА НЕТ ЗАГРУЖЕННЫХ ИЗДАНИЙ</div>
 </template>
 
 <style scoped>

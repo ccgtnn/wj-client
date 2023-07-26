@@ -41,20 +41,20 @@ const passviveClass = computed(() => `${props.customClass}__passive`)
 <style scoped>
 .default-class {
   @apply px-2 pt-1 pb-1.5 
-  bg-button-default-bg shadow-lg rounded-md 
+  bg-mainColors-button-default-bg shadow-lg rounded-md 
   hover:shadow-none;
 }
 .default-class__active {
-  @apply bg-button-default-bgActive shadow-none;
+  @apply bg-mainColors-button-default-bgActive shadow-none;
 }
 .default-class__passive {
-  @apply border border-dashed border-button-default-brdPassive bg-opacity-0 
+  @apply border border-dashed bg-opacity-0 
   shadow-none;
 }
 
 .text-class {
-  @apply text-button-text-text border-b border-button-text-brd 
-  hover:text-button-text-textActive hover:border-button-text-brdActive;
+  @apply text-mainColors-button-text-text border-b border-mainColors-button-text-brd 
+  hover:text-mainColors-button-text-textActive hover:border-mainColors-button-text-brdActive;
 }
 .text-class__active {
   @apply font-bold;
@@ -64,10 +64,11 @@ const passviveClass = computed(() => `${props.customClass}__passive`)
 }
 
 .icon-class {
-  @apply font-normal text-button-icon-text hover:text-button-text-textActive;
+  @apply font-normal text-mainColors-button-icon-text 
+  hover:text-mainColors-button-text-textActive;
 }
 .icon-class__active {
-  @apply text-button-icon-textActive;
+  @apply text-mainColors-button-icon-textActive;
 }
 .icon-class__passive {
   @apply opacity-50;

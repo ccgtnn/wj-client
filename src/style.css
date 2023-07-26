@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 body {
-  @apply bg-bg bg-bgImg bg-center bg-no-repeat text-text;
+  @apply bg-mainColors-bg bg-bgImg bg-cover text-mainColors-text;
   font-family: 'Nunito', sans-serif;
 }
 
 hr {
-  @apply text-hr-bg;
+  @apply text-mainColors-hr-bg;
 }

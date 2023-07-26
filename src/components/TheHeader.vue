@@ -1,11 +1,10 @@
 <script setup>
+import { computed } from 'vue'
 import TheNav from '../components/TheNav.vue'
 import TheSearch from '../components/TheSearch.vue'
-import { lang } from '../config'
 
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
+// получаем текущий язык из переменных окружения
+const lang = computed(() => import.meta.env.VITE_APP_LANG)
 
 const switchLanguage = (newLang) => {
   const newUrl = window.location.href.replace(/\/\/(en|ru)\./, `//${newLang}.`)
@@ -20,13 +19,13 @@ const switchLanguage = (newLang) => {
         <div class="top__icons icons">
           <img
             src="icon-ru.jpg"
-            :class="[lang == 'ru' ? 'w-8' : 'w-6']"
+            :class="[lang == 'ru' ? 'w-8' : 'w-5']"
             @click="switchLanguage('ru')"
             class="icons__img"
           />
           <img
             src="icon-en.jpg"
-            :class="[lang == 'en' ? 'w-8' : 'w-6']"
+            :class="[lang == 'en' ? 'w-8' : 'w-5']"
             @click="switchLanguage('en')"
             class="icons__img"
           />
@@ -37,12 +36,12 @@ const switchLanguage = (newLang) => {
         </div>
       </div>
 
-      <div class="top__title title">
+      <router-link to="/" class="top__title title">
         <div class="title__line1">Научно-практический журнал</div>
         <div class="title__line2">
           «Водное хозяйство России: проблемы, технологии, управление»
         </div>
-      </div>
+      </router-link>
 
       <TheSearch class="top__search" />
     </div>
@@ -64,13 +63,15 @@ header {
   @apply flex items-center space-x-4;
 }
 .top__isbn {
-  @apply text-header-top-isbn-text text-xs;
+  @apply text-mainColors-header-top-isbn-text text-xs;
 }
 .top__title {
   @apply absolute top-20 left-1/2 transform -translate-x-1/2;
 }
 .title {
-  @apply w-full flex flex-col items-center space-y-1 text-header-top-title-text text-center;
+  @apply w-full flex flex-col items-center space-y-1 
+  text-mainColors-header-top-title-text text-center
+  cursor-pointer;
 }
 .title__line1 {
   @apply text-base md:text-xl;

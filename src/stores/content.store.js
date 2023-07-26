@@ -3,6 +3,7 @@ import { Api } from '@/api'
 import { contentSchema, arrayContentSchema } from '../schemes/content.scheme'
 import { ref } from 'vue'
 import { useErrorsStore } from '@/stores/errors.store'
+import dataJson from '../ru.data.json'
 
 export const useContentsStore = defineStore('contents', () => {
   const contentsList = ref([])
@@ -20,13 +21,18 @@ export const useContentsStore = defineStore('contents', () => {
 
   const load = async () => {
     try {
+      /*
       let data = await api.load()
-
+      
       // превращаем строку json в объект
       data = data.map((e) => {
         e.data = JSON.parse(e.data)
         return e
       })
+      */
+
+      // TEMP
+      let data = dataJson
 
       contentsList.value = data
     } catch (error) {

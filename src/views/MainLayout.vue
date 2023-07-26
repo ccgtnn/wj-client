@@ -1,6 +1,6 @@
 <script setup>
-import TheHeader from '../components/TheHeader.vue'
-import TheFooter from '../components/TheFooter.vue'
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 <template>
@@ -26,6 +26,6 @@ import TheFooter from '../components/TheFooter.vue'
   @apply h-screen flex flex-col items-center;
 }
 main {
-  @apply w-full flex-grow bg-bg;
+  @apply w-full flex-grow bg-mainColors-bg;
 }
 </style>

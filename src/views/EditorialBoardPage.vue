@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import MajorEditor from '../components/MajorEditor.vue'
+import MajorEditor from '@/components/MajorEditor.vue'
 import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
@@ -29,7 +29,7 @@ const data = computed(() => contentsStore.getByName('editorial_board-page'))
   @apply basis-3/4;
 }
 .page__right {
-  @apply basis-1/4 p-4 space-y-4 bg-content-right-bg;
+  @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
 }
 .page__title {
   @apply py-4 flex justify-center;

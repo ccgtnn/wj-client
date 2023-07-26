@@ -1,16 +1,16 @@
 <script setup>
 import { computed } from 'vue'
-import MajorEditor from '../components/MajorEditor.vue'
-import IssuesLast from '../components/journals/issues/IssuesLast.vue'
-import IssuesList from '../components/journals/issues/IssuesList.vue'
+import MajorEditor from '@/components/MajorEditor.vue'
+import IssuesLast from '@/components/journals/issues/IssuesLast.vue'
+import IssuesList from '@/components/journals/issues/IssuesList.vue'
 import { useContentsStore } from '@/stores/content.store'
-import { usePrepIssues } from '../composables/journals/issues/usePrepIssues'
+import { usePrepIssuesByYears } from '@/composables/journals/issues/usePrepIssuesByYears'
 
 const contentsStore = useContentsStore()
 
 const data = computed(() => contentsStore.getByName('archive-page'))
 
-usePrepIssues()
+usePrepIssuesByYears()
 </script>
 
 <template>
@@ -38,7 +38,7 @@ usePrepIssues()
   @apply basis-3/4;
 }
 .page__right {
-  @apply basis-1/4 p-4 space-y-4 bg-content-right-bg;
+  @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
 }
 .page__title {
   @apply py-4 flex justify-center;

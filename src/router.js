@@ -7,9 +7,14 @@ const routes = [
     component: MainLayout,
     children: [
       {
-        path: 'about',
+        path: '',
         component: () =>
-          import(/* webpackChunkName: "app" */ './views/AboutPage.vue'),
+          import(/* webpackChunkName: "app" */ './views/about/AboutPage.vue'),
+      },
+      {
+        path: 'indexed',
+        component: () =>
+          import(/* webpackChunkName: "app" */ './views/about/IndexedPage.vue'),
       },
       {
         path: 'editorial_board',

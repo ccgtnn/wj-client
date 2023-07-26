@@ -1,15 +1,14 @@
 import axios from 'axios'
-import { apiUrl, lang } from '@/config'
 
 const http = axios.create({
-  baseURL: `${apiUrl}/api/`,
+  baseURL: `${import.meta.env.VITE_APP_API}/api/`,
   timeout: 7000,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
   params: {
-    lang,
+    lang: import.meta.env.VITE_APP_LANG,
   },
 })
 

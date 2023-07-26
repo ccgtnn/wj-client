@@ -1,11 +1,12 @@
 <script setup>
 import { computed } from 'vue'
-import MajorEditor from '../components/MajorEditor.vue'
+import MajorEditor from '@/components/MajorEditor.vue'
+import IssuesLast from '@/components/journals/issues/IssuesLast.vue'
 import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
 
-const data = computed(() => contentsStore.getByName('current-issue-page'))
+const data = computed(() => contentsStore.getByName('indexed-page'))
 </script>
 
 <template>
@@ -16,6 +17,8 @@ const data = computed(() => contentsStore.getByName('current-issue-page'))
       </div>
     </div>
     <div class="page__right">
+      <IssuesLast />
+      <hr />
       <MajorEditor />
     </div>
   </div>
@@ -29,7 +32,7 @@ const data = computed(() => contentsStore.getByName('current-issue-page'))
   @apply basis-3/4;
 }
 .page__right {
-  @apply basis-1/4 p-4 space-y-4 bg-content-right-bg;
+  @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
 }
 .page__title {
   @apply py-4 flex justify-center;
