@@ -12,13 +12,22 @@ export default {
     brd: '#198ec0',
     bg: '#d6dbe4',
   },
+  newMark: {
+    bg: '#ffed4a',
+    text: '#212529',
+  },
+  archiveBox: {
+    bg: '#d6dbe4',
+    bgActive: '#b9bec9',
+    brd: '#198ec0',
+  },
   button: {
     default: {
       bg: '#40484F',
       bgActive: '#196CAA',
     },
     text: {
-      text: '#ccc',
+      text: '#fff',
       textActive: '#2b79d1',
       brd: '#999',
       brdActive: '#2b79d1',

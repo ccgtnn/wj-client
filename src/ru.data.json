@@ -1,59 +1,130 @@
-[   
-    {
-        "name": "main-menu",
-        "data": {
-            "about": "О журнале", 
-            "indexed": "Индексация журнала", 
-            "editors": "Редакция", 
-            "authors": "Авторам", 
-            "topics": "Тематические рубрики",  
-            "currentIssue": "Текущий выпуск",                
-            "archive": "Архив",  
-            "contacts": "Контакты"    
-        }
-    },
-    {
-        "name": "indexed-page",
-        "data": {
-            "title": "Индексация журнала"
-        }
-    },
-    {
-        "name": "archive-page",
-        "data": {
-            "title": "Архив"           
-        }
-    },
-    {
-        "name": "current-issue-page",
-        "data": {
-            "title": "Текущий выпуск"           
-        }
-    },
-    {
-        "name": "topics-page",
-        "data": {
-            "title": "Тематические рубрики"           
-        }
-    },
-    {
-        "name": "editorial_board-page",
-        "data": {
-            "title": "Редакционная коллегия"           
-        }
-    },
-    {
-        "name": "major-editor-comp",
-        "data": {
-            "title": "Главный редактор",
-            "name": "Косолапов Алексей Евгеньевич",
-            "text": "д-р техн. наук, профессор, директор ФГБУ «Российский научно-исследовательский институт комплексного использования и охраны водных ресурсов» "
-        }
-    },
-    {
-        "name": "last-issue-comp",
-        "data": {
-            "title": "Последний выпуск"           
-        }
+[
+  {
+    "name": "main-menu",
+    "data": [
+      {
+        "title": "О журнале",
+        "path": "",
+        "menuList": [
+          { "title": "Общая информация", "path": "/" },
+          { "title": "Индексация журнала", "path": "/indexed" },
+          { "title": "Политика открытого доступа", "path": "/politic_access" },
+          {
+            "title": "Политика журнала по публикации персональных данных",
+            "path": "/politic_personal_data"
+          },
+          {
+            "title": "Публикационная этика",
+            "path": "/public_ethic"
+          },
+          {
+            "title": "Подписка",
+            "path": "/subscription"
+          }
+        ]
+      },
+
+      {
+        "title": "Редакция",
+        "path": "",
+        "menuList": [
+          { "title": "Редакционная коллегия", "path": "/editorial_board" },
+          { "title": "Рецензирование", "path": "/recens" },
+          { "title": "Издательская этика", "path": "/ethics" }
+        ]
+      },
+      {
+        "title": "Авторам",
+        "path": "",
+        "menuList": [
+          { "title": "Тематические рубрики", "path": "/topics" },
+          {
+            "title": "Требованиями к оформлению материалов",
+            "path": "/req_art"
+          }
+        ]
+      },
+      {
+        "title": "Текущий выпуск",
+        "path": "/current_issue"
+      },
+      {
+        "title": "Архив",
+        "path": "/archive"
+      },
+      {
+        "title": "Контакты",
+        "path": "/contacts"
+      }
+    ]
+  },
+
+  {
+    "name": "indexed-page",
+    "data": {
+      "title": "Индексация журнала"
     }
+  },
+  {
+    "name": "archive-page",
+    "data": {
+      "title": "Архив"
+    }
+  },
+  {
+    "name": "current-issue-page",
+    "data": {
+      "title": "Текущий выпуск"
+    }
+  },
+  {
+    "name": "topics-page",
+    "data": {
+      "title": "Тематические рубрики"
+    }
+  },
+  {
+    "name": "editorial_board-page",
+    "data": {
+      "title": "Редакционная коллегия"
+    }
+  },
+  {
+    "name": "major-editor-comp",
+    "data": {
+      "title": "Главный редактор",
+      "name": "Косолапов Алексей Евгеньевич",
+      "text": "д-р техн. наук, профессор, директор ФГБУ «Российский научно-исследовательский институт комплексного использования и охраны водных ресурсов» "
+    }
+  },
+  {
+    "name": "last-issue-comp",
+    "data": {
+      "title": "Последний выпуск"
+    }
+  },
+  {
+    "name": "archive-issues",
+    "data": [
+      {
+        "year": 2023,
+        "issues": [
+          { "number": 1, "isNew": false },
+          { "number": 2, "isNew": false },
+          { "number": 3, "isNew": true }
+        ]
+      },
+      {
+        "year": 2022,
+        "issues": [
+          { "number": 1, "isNew": false },
+          { "number": 2, "isNew": false },
+          { "number": 3, "isNew": false },
+          { "number": 4, "isNew": false },
+          { "number": 5, "isNew": false },
+          { "number": 6, "isNew": false }
+        ]
+      }
+    ]
+  }
 ]

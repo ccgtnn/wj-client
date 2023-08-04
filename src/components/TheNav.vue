@@ -9,109 +9,33 @@ const contentsStore = useContentsStore()
 
 // подгружаем локализацию пунктов меню
 const data = computed(() => contentsStore.getByName('main-menu'))
-
 const dropdown = ref(null)
 
 // главное меню
-const menuList = computed(() => [
-  {
-    name: data.value?.about,
-    isActive:
-      '/indexed /politic_access /politic_personal_data /public_ethic /subscription'.includes(
-        route.path
-      ) || route.path == '/',
-    to: '/',
-    menuList: [
-      {
-        name: 'Общая информация',
-        isActive: route.path == '/',
-        to: '/',
-      },
-      {
-        name: data.value?.indexed,
-        isActive: route.path.includes('indexed'),
-        to: '/indexed',
-      },
-      {
-        name: 'Политика открытого доступа',
-        isActive: route.path.includes('politic_access'),
-        to: '/politic_access',
-      },
-      {
-        name: 'Политика журнала по публикации персональных данных',
-        isActive: route.path.includes('politic_personal_data'),
-        to: '/politic_personal_data',
-      },
-      {
-        name: 'Публикационная этика',
-        isActive: route.path.includes('public_ethic'),
-        to: '/public_ethic',
-      },
-      {
-        name: 'Подписка',
-        isActive: route.path.includes('subscription'),
-        to: '/subscription',
-      },
-    ],
-  },
-  {
-    name: data.value?.editors,
-    isActive: route.path.includes('editorial_board'),
-    to: '/editorial_board',
-    menuList: [
-      {
-        name: 'Редакционная коллегия',
-        isActive: route.path.includes('editorial_board'),
-        to: '/editorial_board',
-      },
-      {
-        name: 'Рецензирование',
-        isActive: route.path.includes('recens'),
-        to: '/recens',
-      },
-      {
-        name: 'Издательская этика',
-        isActive: route.path.includes('ethics'),
-        to: '/ethics',
-      },
-    ],
-  },
-  {
-    name: data.value?.authors,
-    isActive: route.path.includes('topics'),
-    to: '/topics',
-    menuList: [
-      {
-        name: 'Тематические рубрики',
-        isActive: route.path.includes('topics'),
-        to: '/topics',
-      },
-      {
-        name: 'Требованиями к оформлению материалов',
-        isActive: route.path.includes('req_art'),
-        to: '/req_art',
-      },
-    ],
-  },
-  {
-    name: data.value?.currentIssue,
-    isActive: route.path.includes('current_issue'),
-    to: '/current_issue',
-    menuList: [],
-  },
-  {
-    name: data.value?.archive,
-    isActive: route.path.includes('archive'),
-    to: '/archive',
-    menuList: [],
-  },
-  {
-    name: data.value?.contacts,
-    isActive: route.path.includes('contacts'),
-    to: '/contacts',
-    menuList: [],
-  },
-])
+const menuList = computed(() =>
+  data.value.map((item) => {
+    const IsChildPathsExsits = item.menuList?.some(
+      (item) => item.path == route.path
+    )
+
+    const isActive = (e) => {
+      return e.menuList ? IsChildPathsExsits : route.path == e.path
+    }
+
+    return {
+      title: item?.title,
+      isActive: isActive(item),
+      path: item?.path,
+      menuList: item?.menuList?.map((subItem) => {
+        return {
+          title: subItem?.title,
+          isActive: isActive(subItem),
+          path: subItem?.path,
+        }
+      }),
+    }
+  })
+)
 </script>
 
 <template>
@@ -125,19 +49,19 @@ const menuList = computed(() => [
         @mouseleave="dropdown = null"
       >
         <router-link
-          v-if="menuItem.menuList?.length === 0"
-          :to="menuItem.to"
+          v-if="!menuItem.menuList?.length"
+          :to="menuItem.path"
           class="menu-list__button"
           :class="{ 'menu-list__button_active': menuItem.isActive }"
         >
-          {{ menuItem.name }}
+          {{ menuItem.title }}
         </router-link>
         <button
           v-else
           class="menu-list__button"
           :class="{ 'menu-list__button_active': menuItem.isActive }"
         >
-          <span>{{ menuItem.name }}</span>
+          <span>{{ menuItem.title }}</span>
           <IconCaretDown class="menu-list__caret-icon" />
         </button>
 
@@ -146,11 +70,11 @@ const menuList = computed(() => [
           <ul v-show="dropdown === i" class="dropdown-menu-list">
             <li v-for="(subItem, j) in menuItem.menuList" :key="`sub-${j}`">
               <router-link
-                :to="subItem.to"
+                :to="subItem.path"
                 class="dropdown-menu-list__item"
                 :class="{ 'dropdown-menu-list__item_active': subItem.isActive }"
               >
-                {{ subItem.name }}
+                {{ subItem.title }}
               </router-link>
             </li>
           </ul>
