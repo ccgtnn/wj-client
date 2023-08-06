@@ -42,6 +42,7 @@ const passviveClass = computed(() => `${props.customClass}__passive`)
 .default-class {
   @apply px-2 pt-1 pb-1.5 
   bg-mainColors-button-default-bg shadow-lg rounded-md 
+  text-mainColors-button-text-text
   hover:shadow-none;
 }
 .default-class__active {

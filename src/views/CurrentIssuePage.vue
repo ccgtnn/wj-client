@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import MajorEditor from '@/components/MajorEditor.vue'
+import ArchiveSidebar from '@/components/archive/ArchiveSidebar.vue'
 import { useContentsStore } from '@/stores/content.store'
 import SomeTest from '../components/SomeTest.vue'
 
@@ -18,6 +19,7 @@ const data = computed(() => contentsStore.getByName('current-issue-page'))
       <SomeTest />
     </div>
     <div class="page__right">
+      <ArchiveSidebar />
       <MajorEditor />
     </div>
   </div>

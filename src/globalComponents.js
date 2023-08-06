@@ -5,6 +5,7 @@ import AppH2 from '@/components/app/AppH2.vue'
 
 import IconClose from '@/components/app/icons/IconClose.vue'
 import IconCaretDown from '@/components/app/icons/IconCaretDown.vue'
+import IconCaretDoubleDown from '@/components/app/icons/IconCaretDoubleDown.vue'
 
 export default function (app) {
   app.component('AppButton', AppButton)
@@ -14,4 +15,5 @@ export default function (app) {
 
   app.component('IconClose', IconClose)
   app.component('IconCaretDown', IconCaretDown)
+  app.component('IconCaretDoubleDown', IconCaretDoubleDown)
 }
