@@ -1,13 +1,9 @@
 <script setup>
-import { computed } from 'vue'
-import { useContentsStore } from '@/stores/content.store'
 import ArchiveYear from './ArchiveYear.vue'
+import data from '../../issues.json'
 
-const contentsStore = useContentsStore()
-
-const data = computed(() => contentsStore.getByName('archive-issues'))
-const lastYear = data.value[0]
-data.value.shift()
+const lastYear = data[0]
+data.shift()
 </script>
 
 <template>

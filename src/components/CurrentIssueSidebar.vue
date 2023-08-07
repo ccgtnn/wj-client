@@ -4,7 +4,7 @@ import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
 
-const data = computed(() => contentsStore.getByName('last-issue-comp'))
+const data = computed(() => contentsStore.getByName('cuurent-issue-comp'))
 </script>
 
 <template>

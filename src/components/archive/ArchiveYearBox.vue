@@ -25,7 +25,7 @@ h2 {
     hover:border-l-8;
 }
 IconCaretDoubleDown {
-  @apply p-2 
+  @apply p-2 w-6
     scale-50;
 }
 

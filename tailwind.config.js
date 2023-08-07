@@ -5,6 +5,9 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      borderColor: {
+        transparent: 'transparent',
+      },
       backgroundImage: {
         bgImg: "url('../../src/assets/bg.jpg')",
       },

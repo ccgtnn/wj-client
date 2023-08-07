@@ -98,33 +98,21 @@
     }
   },
   {
-    "name": "last-issue-comp",
+    "name": "cuurent-issue-comp",
     "data": {
-      "title": "Последний выпуск"
+      "title": "Текущий выпуск"
     }
   },
   {
-    "name": "archive-issues",
-    "data": [
-      {
-        "year": 2023,
-        "issues": [
-          { "number": 1, "isNew": false },
-          { "number": 2, "isNew": false },
-          { "number": 3, "isNew": true }
-        ]
-      },
-      {
-        "year": 2022,
-        "issues": [
-          { "number": 1, "isNew": false },
-          { "number": 2, "isNew": false },
-          { "number": 3, "isNew": false },
-          { "number": 4, "isNew": false },
-          { "number": 5, "isNew": false },
-          { "number": 6, "isNew": false }
-        ]
-      }
-    ]
-  }
+    "name": "archive-comp",
+    "data": {
+      "title": "Архив"
+    }
+  },
+  {
+    "name": "new-mark-comp",
+    "data": {
+      "text": "НОВЫЙ"
+    }
+  }  
 ]

@@ -21,10 +21,30 @@ export default {
     bgActive: '#b9bec9',
     brd: '#198ec0',
   },
+  archive: {
+    yearTitle: {
+      bg: '#c3cad7',
+      bgActive: '#d2d7e1',
+      brd: '#198ec0',
+    },
+    issueList: {
+      brd: '#b8bbc3',
+    },
+    issueItem: {
+      text: '#0d5e9b',
+      textHover: '#084d80',
+      brdHover: '#084d80',
+    },
+  },
   button: {
     default: {
-      bg: '#40484F',
+      bg: '#0b94ce',
+      bgHover: '#0680b4',
       bgActive: '#196CAA',
+    },
+    download: {
+      bg: '#119d06',
+      bgHover: '#0e8904',
     },
     text: {
       text: '#fff',

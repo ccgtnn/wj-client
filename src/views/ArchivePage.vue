@@ -1,16 +1,20 @@
 <script setup>
 import { computed } from 'vue'
-import MajorEditor from '@/components/MajorEditor.vue'
-import IssuesLast from '@/components/journals/issues/IssuesLast.vue'
-import IssuesList from '@/components/journals/issues/IssuesList.vue'
 import { useContentsStore } from '@/stores/content.store'
 import { usePrepIssuesByYears } from '@/composables/journals/issues/usePrepIssuesByYears'
+import MajorEditorSidebar from '@/components/MajorEditorSidebar.vue'
+import CurrentIssueSidebar from '@/components/CurrentIssueSidebar.vue'
+import YearsList from '@/components/journals/issues/YearsList.vue'
 
 const contentsStore = useContentsStore()
 
 const data = computed(() => contentsStore.getByName('archive-page'))
 
-usePrepIssuesByYears()
+usePrepIssuesByYears({
+  showAllIssuesList: true,
+  showDelay: 300,
+  isDownloadButton: true,
+})
 </script>
 
 <template>
@@ -19,12 +23,12 @@ usePrepIssuesByYears()
       <div class="page__title">
         <AppH1>{{ data?.title }}</AppH1>
       </div>
-      <IssuesList />
+      <YearsList />
     </div>
     <div class="page__right">
-      <IssuesLast />
+      <CurrentIssueSidebar />
       <hr />
-      <MajorEditor />
+      <MajorEditorSidebar />
     </div>
   </div>
 </template>

@@ -6,72 +6,77 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  isPassive: {
+  isDisable: {
     type: Boolean,
     default: false,
   },
   customClass: {
     type: String,
-    default: 'default-class',
-  },
-  isLoading: {
-    type: Boolean,
-    default: false,
+    default: 'default-button',
   },
 })
-const activeClass = computed(() => `${props.customClass}__active`)
-const passviveClass = computed(() => `${props.customClass}__passive`)
+
+// устанавливаем для кнопки необходимые классы
+const buttonClass = computed(() => {
+  const activeClass = props.isActive ? `${props.customClass}__active` : ''
+  const disableClass = props.isDisable ? `${props.customClass}__disable` : ''
+
+  return `${props.customClass} ${activeClass} ${disableClass}`
+})
 </script>
 
 <template>
-  <button
-    v-if="!isLoading"
-    :class="[
-      { [activeClass]: isActive },
-      { [passviveClass]: isPassive },
-      customClass,
-    ]"
-    @click="$emit('click')"
-  >
+  <button :class="buttonClass" @click="$emit('click')">
     <slot></slot>
   </button>
-  <button v-else :class="customClass">LOADING</button>
 </template>
 
 <style scoped>
-.default-class {
+.default-button {
   @apply px-2 pt-1 pb-1.5 
-  bg-mainColors-button-default-bg shadow-lg rounded-md 
-  text-mainColors-button-text-text
-  hover:shadow-none;
+  bg-mainColors-button-default-bg text-mainColors-button-text-text 
+  rounded-sm duration-300
+  hover:bg-mainColors-button-default-bgHover;
 }
-.default-class__active {
-  @apply bg-mainColors-button-default-bgActive shadow-none;
+.default-button__active {
+  @apply bg-mainColors-button-default-bgActive;
 }
-.default-class__passive {
-  @apply border border-dashed bg-opacity-0 
-  shadow-none;
-}
-
-.text-class {
-  @apply text-mainColors-button-text-text border-b border-mainColors-button-text-brd 
-  hover:text-mainColors-button-text-textActive hover:border-mainColors-button-text-brdActive;
-}
-.text-class__active {
-  @apply font-bold;
-}
-.text-class__passive {
+.default-button__disable {
   @apply opacity-50;
 }
 
-.icon-class {
+.download-button {
+  @apply px-2 pt-1 pb-1.5 
+  bg-mainColors-button-download-bg text-mainColors-button-text-text 
+  rounded-sm duration-300
+  hover:bg-mainColors-button-download-bgHover;
+}
+.download-button__active {
+  @apply bg-mainColors-button-default-bgActive;
+}
+.download-button__disable {
+  @apply opacity-50;
+}
+
+.text-button {
+  @apply text-mainColors-button-text-text border-b border-mainColors-button-text-brd 
+  hover:text-mainColors-button-text-textActive hover:border-mainColors-button-text-brdActive;
+}
+.text-button__active {
+  @apply font-bold;
+}
+.text-button__disable {
+  @apply opacity-50;
+}
+
+.icon-button {
   @apply font-normal text-mainColors-button-icon-text 
   hover:text-mainColors-button-text-textActive;
 }
-.icon-class__active {
+.icon-button__active {
   @apply text-mainColors-button-icon-textActive;
 }
-.icon-class__passive {
+.icon-button__disable {
   @apply opacity-50;
 }
 </style>

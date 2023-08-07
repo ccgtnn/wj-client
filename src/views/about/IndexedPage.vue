@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
-import MajorEditor from '@/components/MajorEditor.vue'
-import IssuesLast from '@/components/journals/issues/IssuesLast.vue'
+import MajorEditorSidebar from '@/components/MajorEditorSidebar.vue'
+import CurrentIssueSidebar from '@/components/CurrentIssueSidebar.vue'
 import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
@@ -17,9 +17,9 @@ const data = computed(() => contentsStore.getByName('indexed-page'))
       </div>
     </div>
     <div class="page__right">
-      <IssuesLast />
+      <CurrentIssueSidebar />
       <hr />
-      <MajorEditor />
+      <MajorEditorSidebar />
     </div>
   </div>
 </template>

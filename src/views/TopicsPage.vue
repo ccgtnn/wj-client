@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import MajorEditor from '@/components/MajorEditor.vue'
+import MajorEditorSidebar from '@/components/MajorEditorSidebar.vue'
 import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
@@ -16,7 +16,7 @@ const data = computed(() => contentsStore.getByName('topics-page'))
       </div>
     </div>
     <div class="page__right">
-      <MajorEditor />
+      <MajorEditorSidebar />
     </div>
   </div>
 </template>

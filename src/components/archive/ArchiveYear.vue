@@ -24,7 +24,7 @@ const props = defineProps({
         <ArchiveIssue
           :issue-number="issue.number"
           :is-new="issue.isNew"
-          :year="year"
+          :year="yearData.year"
         />
       </div>
     </div>
