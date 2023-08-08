@@ -69,11 +69,17 @@ const menuList = computed(() =>
         <!-- Dropdown menu -->
         <transition name="fade-dropdown-menu">
           <ul v-if="dropdown === i" class="dropdown-menu-list">
-            <li v-for="(subItem, j) in menuItem.menuList" :key="`sub-${j}`">
+            <li
+              v-for="(subItem, j) in menuItem.menuList"
+              :key="`sub-${j}`"
+              class="dropdown-menu-list__item"
+            >
               <router-link
                 :to="subItem.path"
-                class="dropdown-menu-list__item"
-                :class="{ 'dropdown-menu-list__item_active': subItem.isActive }"
+                class="dropdown-menu-list__button"
+                :class="{
+                  'dropdown-menu-list__button_active': subItem.isActive,
+                }"
                 @click="dropdown = null"
               >
                 {{ subItem.title }}
@@ -109,12 +115,15 @@ const menuList = computed(() =>
   @apply absolute z-10 pt-2 shadow-lg;
 }
 .dropdown-menu-list__item {
+  @apply border-b border-mainColors-header-nav-sub-brd last:border-none;
+}
+.dropdown-menu-list__button {
   @apply block px-4 py-2 
   bg-mainColors-header-nav-sub-button-bg
   whitespace-nowrap
   hover:bg-mainColors-header-nav-sub-button-bgHover;
 }
-.dropdown-menu-list__item_active {
+.dropdown-menu-list__button_active {
   @apply text-mainColors-header-nav-sub-button-textActive bg-mainColors-header-nav-sub-button-bgActive
   hover:bg-mainColors-header-nav-sub-button-bgActive;
 }

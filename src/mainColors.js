@@ -97,6 +97,7 @@ export default {
         bgActive: '#0b94ce',
       },
       sub: {
+        brd: '#e6e8ee',
         button: {
           bg: '#f5f6f8',
           bgHover: '#e4e8f1',
