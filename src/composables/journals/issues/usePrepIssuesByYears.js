@@ -1,4 +1,4 @@
-import { computed, provide, ref, watchEffect } from 'vue'
+import { computed, provide, ref, watch } from 'vue'
 import { useIssuesStore } from '@/stores/journals/issues.store'
 
 export function usePrepIssuesByYears(
@@ -47,9 +47,13 @@ export function usePrepIssuesByYears(
   })
 
   // при изменении sortedYearsList заполняем им yearsList
-  watchEffect(() => {
-    yearsList.value = [...sortedYearsList.value]
-  })
+  watch(
+    sortedYearsList,
+    (value) => {
+      yearsList.value = [...value]
+    },
+    { immediate: true }
+  )
 
   // Считаем количество всех записей
   const yearsListCount = computed(() => sortedYearsList.value?.length)

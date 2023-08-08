@@ -12,7 +12,7 @@ const data = computed(() => contentsStore.getByName('major-editor-comp'))
     <div class="major-editor__title">
       <AppH1>{{ data?.title }}</AppH1>
     </div>
-    <img src="major-editor.jpg" class="major-editor__img" />
+    <img src="/major-editor.jpg" class="major-editor__img" />
     <div class="major-editor__name">{{ data?.name }}</div>
     <div class="major-editor__text">{{ data?.text }}</div>
   </div>

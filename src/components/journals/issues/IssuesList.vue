@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect, inject, nextTick } from 'vue'
+import { ref, inject, nextTick, watch } from 'vue'
 import IssuesItem from './IssuesItem.vue'
 
 const yearsOptions = inject('yearsOptions')
@@ -31,16 +31,20 @@ const delay = (value, sec) => {
 }
 
 // Эффект слежения за изменением состояния открытия
-watchEffect(() => {
-  if (isFirstOpen.value) {
-    // Если это первое открытие, примените задержку из yearsOptions
-    delay(props.isOpen, yearsOptions.showDelay)
-    isFirstOpen.value = false
-    return
-  }
-  // Если не первое открытие, примените изменения без задержки
-  delay(props.isOpen, 0)
-})
+watch(
+  () => props.isOpen,
+  (isOpen) => {
+    if (isFirstOpen.value) {
+      // Если это первое открытие, примените задержку из yearsOptions
+      delay(isOpen, yearsOptions.showDelay)
+      isFirstOpen.value = false
+      return
+    }
+    // Если не первое открытие, примените изменения без задержки
+    delay(isOpen, 0)
+  },
+  { immediate: true }
+)
 
 // вычисляем конечную высоту элемента перед анимацией, для корректной работы с h-auto
 const setHeight = async (type) => {

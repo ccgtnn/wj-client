@@ -18,13 +18,13 @@ const switchLanguage = (newLang) => {
       <div class="top__right">
         <div class="top__icons icons">
           <img
-            src="icon-ru.jpg"
+            src="/icon-ru.jpg"
             :class="[lang == 'ru' ? 'w-8' : 'w-5']"
             @click="switchLanguage('ru')"
             class="icons__img"
           />
           <img
-            src="icon-en.jpg"
+            src="/icon-en.jpg"
             :class="[lang == 'en' ? 'w-8' : 'w-5']"
             @click="switchLanguage('en')"
             class="icons__img"

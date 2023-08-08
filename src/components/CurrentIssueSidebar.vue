@@ -12,7 +12,7 @@ const data = computed(() => contentsStore.getByName('cuurent-issue-comp'))
     <div class="last-issue__title">
       <AppH1>{{ data?.title }}</AppH1>
     </div>
-    <img src="last-issue.jpg" class="last-issue__img" />
+    <img src="/last-issue.jpg" class="last-issue__img" />
     <div class="last-issue__issue">№3, 2023 год</div>
   </div>
 </template>
