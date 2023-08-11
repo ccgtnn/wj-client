@@ -21,7 +21,7 @@ export function usePrepIssuesByYears(
       if (!groups[year]) {
         groups[year] = []
       }
-      groups[year].push(issue)
+      groups[year].push({ ...issue })
       return groups
     }, {})
 

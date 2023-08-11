@@ -1,6 +1,10 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import CurrentAndPrevIssue from '../components/CurrentAndPrevIssue.vue'
+
+const route = useRoute()
 </script>
 
 <template>
@@ -10,6 +14,7 @@ import TheFooter from '@/components/TheFooter.vue'
 
   <div class="wrap">
     <TheHeader />
+    <CurrentAndPrevIssue v-if="route.path == '/'" />
     <main>
       <RouterView></RouterView>
     </main>

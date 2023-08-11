@@ -98,6 +98,6 @@ const setHeight = async (type) => {
 /* Конечное состояние для "enter" и начальное состояние для "leave" */
 .slide-down-issues-enter-to,
 .slide-down-issues-leave-from {
-  @apply h-auto overflow-hidden;
+  @apply overflow-hidden;
 }
 </style>

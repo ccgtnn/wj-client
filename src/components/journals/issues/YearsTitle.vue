@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect, inject } from 'vue'
+import { ref, watch, inject } from 'vue'
 
 const yearsOptions = inject('yearsOptions')
 
@@ -22,14 +22,18 @@ const delay = (value, sec) => {
 }
 
 // Эффект отслеживания для управления задержкой активации
-watchEffect(() => {
-  if (isFirstOpen.value) {
-    delay(props.isActive, yearsOptions.showDelay) // Если это первое открытие, используйте задержку из yearsOptions
-    isFirstOpen.value = false
-    return
-  }
-  delay(props.isActive, 0) // Иначе обновите значение без задержки
-})
+watch(
+  () => props.isActive,
+  (value) => {
+    if (isFirstOpen.value) {
+      delay(value, yearsOptions.showDelay) // Если это первое открытие, используйте задержку из yearsOptions
+      isFirstOpen.value = false
+      return
+    }
+    delay(value, 0)
+  },
+  { immediate: true }
+)
 </script>
 
 <template>

@@ -9,7 +9,7 @@ export default {
         transparent: 'transparent',
       },
       backgroundImage: {
-        bgImg: "url('../../src/assets/bg.jpg')",
+        bgImg: "url('https://next.waterjournal.ru/bg.jpg')",
       },
     },
     screens: {
