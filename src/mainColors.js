@@ -119,4 +119,7 @@ export default {
   404: {
     text: '#fff',
   },
+  link: {
+    DEFAULT: '#165292',
+  },
 }
