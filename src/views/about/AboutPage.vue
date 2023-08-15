@@ -15,14 +15,12 @@ const data = computed(() => contentsStore.getByName('about-page'))
         <AppH1>{{ data?.title }}</AppH1>
       </div>
       <div class="about-page__content">
-        <div class="AppH2">
-          <AppH2>
-            Научно-практический журнал «Водное хозяйство России: проблемы,
-            технологии, управление»
-          </AppH2>
-        </div>
+        <AppH2 class="h2-title">
+          Научно-практический журнал «Водное хозяйство России: проблемы,
+          технологии, управление»
+        </AppH2>
 
-        <div class="regular-text">
+        <div class="text-regular">
           Журнал является периодическим печатным научным рецензируемым журналом.
           Издается с 1999 г. Периодичность выхода журнала – 6 номеров в год.
           Издание журнала осуществляется в рамках государственного задания,
@@ -31,46 +29,41 @@ const data = computed(() => contentsStore.getByName('about-page'))
           комплексного использования и охраны водных ресурсов» (Екатеринбург,
           Россия).
         </div>
-        <div class="list">
-          <div class="list__content">
-            <AppCard>
-              <ul>
-                <li>
-                  <a
-                    href="https://waterjournal.ru/files/docs/ISSN.jpg"
-                    class="a-regular"
-                  >
-                    Международный стандартный серийный номер ISSN 1999-4508.
-                  </a>
-                </li>
+        <AppCard class="list">
+          <ul>
+            <li>
+              <a
+                href="https://waterjournal.ru/files/docs/ISSN.jpg"
+                class="a-regular"
+              >
+                Международный стандартный серийный номер ISSN 1999-4508.
+              </a>
+            </li>
 
-                <li>
-                  <a
-                    href="https://waterjournal.ru/files/docs/eISSN.pdf"
-                    class="a-regular"
-                  >
-                    Электронный международный стандартный серийный номер еISSN
-                    2686-8253
-                  </a>
-                </li>
+            <li>
+              <a
+                href="https://waterjournal.ru/files/docs/eISSN.pdf"
+                class="a-regular"
+              >
+                Электронный международный стандартный серийный номер еISSN
+                2686-8253
+              </a>
+            </li>
 
-                <li>
-                  <a
-                    href="https://waterjournal.ru/files/docs/reg_num_040322.pdf"
-                    class="a-regular"
-                  >
-                    Издание зарегистрировано в Федеральной службе по надзору в
-                    сфере связи, информационных технологий и массовых
-                    коммуникаций 4 марта 2022 г., регистрационный номер: серия
-                    ПИ № ФС77-82772
-                  </a>
-                </li>
-              </ul>
-            </AppCard>
-          </div>
-        </div>
+            <li>
+              <a
+                href="https://waterjournal.ru/files/docs/reg_num_040322.pdf"
+                class="a-regular"
+              >
+                Издание зарегистрировано в Федеральной службе по надзору в сфере
+                связи, информационных технологий и массовых коммуникаций 4 марта
+                2022 г., регистрационный номер: серия ПИ № ФС77-82772
+              </a>
+            </li>
+          </ul>
+        </AppCard>
 
-        <div class="regular-text">
+        <div class="text-regular">
           Журнал распространяется по подписке и адресной рассылке по всей
           территории Российской Федерации, подписной индекс 39076. Подписаться
           на журнал вы можете: через Объединенный каталог «Пресса России»
@@ -84,7 +77,7 @@ const data = computed(() => contentsStore.getByName('about-page'))
 
         <hr />
 
-        <div class="regular-text">
+        <div class="text-regular">
           Журнал включен в Перечень ведущих рецензируемых научных журналов и
           изданий, в которых должны быть опубликованы основные научные
           результаты диссертаций на соискание ученых степеней доктора и
@@ -93,14 +86,14 @@ const data = computed(() => contentsStore.getByName('about-page'))
 
         <hr />
 
-        <div class="regular-text">
+        <div class="text-regular">
           Электронная версия журнала размещается на сайте Научной электронной
           библиотеки (eLIBRARY.RU).
         </div>
 
         <hr />
 
-        <div class="regular-text">
+        <div class="text-regular">
           <p><strong>Главной целью журнала</strong></p>
           является научное обеспечение развития водного хозяйства,
           совершенствование методов управления в области использования,
@@ -140,9 +133,9 @@ const data = computed(() => contentsStore.getByName('about-page'))
           </div>
         </div>
         <hr />
-        <div class="regular-text">Публикация статей бесплатная.</div>
+        <div class="text-regular">Публикация статей бесплатная.</div>
         <hr />
-        <div class="img-set">
+        <div class="img-group">
           <a
             href="https://creativecommons.org/licenses/by-nc/4.0/"
             target="_blank"
@@ -154,7 +147,7 @@ const data = computed(() => contentsStore.getByName('about-page'))
           </a>
           <img src="/open_access.png" style="width: 45px" />
         </div>
-        <div class="regular-text regular-text_sm">
+        <div class="text-regular text-regular_sm">
           All works are licensed under a
           <a
             class="a-regular"
@@ -177,7 +170,7 @@ const data = computed(() => contentsStore.getByName('about-page'))
   @apply flex flex-row container mx-auto md:flex md:justify-center;
 }
 .about-page__left {
-  @apply basis-3/4;
+  @apply pr-3 basis-3/4;
 }
 .about-page__right {
   @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
@@ -186,15 +179,15 @@ const data = computed(() => contentsStore.getByName('about-page'))
   @apply py-4 flex justify-center;
 }
 
-.AppH2 {
+.h2-title {
   @apply py-4;
 }
 
-.regular-text {
+.text-regular {
   @apply py-4;
 }
 
-.regular-text_sm {
+.text-regular_sm {
   @apply text-sm;
 }
 
@@ -206,11 +199,7 @@ const data = computed(() => contentsStore.getByName('about-page'))
   @apply px-6 py-4;
 }
 
-hr {
-  @apply p-2;
-}
-
-.img-set {
+.img-group {
   @apply p-2 flex flex-row items-center;
 }
 </style>
