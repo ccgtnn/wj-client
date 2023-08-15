@@ -56,6 +56,7 @@ const menuList = computed(() =>
         >
           {{ menuItem.title }}
         </router-link>
+
         <button
           v-else
           class="menu-list__button"
@@ -66,13 +67,20 @@ const menuList = computed(() =>
         </button>
 
         <!-- Dropdown menu -->
-        <transition name="fade">
-          <ul v-show="dropdown === i" class="dropdown-menu-list">
-            <li v-for="(subItem, j) in menuItem.menuList" :key="`sub-${j}`">
+        <transition name="fade-dropdown-menu">
+          <ul v-if="dropdown === i" class="dropdown-menu-list">
+            <li
+              v-for="(subItem, j) in menuItem.menuList"
+              :key="`sub-${j}`"
+              class="dropdown-menu-list__item"
+            >
               <router-link
                 :to="subItem.path"
-                class="dropdown-menu-list__item"
-                :class="{ 'dropdown-menu-list__item_active': subItem.isActive }"
+                class="dropdown-menu-list__button"
+                :class="{
+                  'dropdown-menu-list__button_active': subItem.isActive,
+                }"
+                @click="dropdown = null"
               >
                 {{ subItem.title }}
               </router-link>
@@ -86,7 +94,7 @@ const menuList = computed(() =>
 
 <style scoped>
 .menu-list {
-  @apply flex gap-4 items-center flex-wrap;
+  @apply flex gap-4 items-center justify-center flex-wrap;
 }
 .menu-list__item {
   @apply relative;
@@ -106,30 +114,30 @@ const menuList = computed(() =>
 .dropdown-menu-list {
   @apply absolute z-10 pt-2 shadow-lg;
 }
-li:hover .dropdown-menu-list {
-  @apply opacity-100 scale-100;
-}
 .dropdown-menu-list__item {
+  @apply border-b border-mainColors-header-nav-sub-brd last:border-none;
+}
+.dropdown-menu-list__button {
   @apply block px-4 py-2 
   bg-mainColors-header-nav-sub-button-bg
   whitespace-nowrap
   hover:bg-mainColors-header-nav-sub-button-bgHover;
 }
-.dropdown-menu-list__item_active {
+.dropdown-menu-list__button_active {
   @apply text-mainColors-header-nav-sub-button-textActive bg-mainColors-header-nav-sub-button-bgActive
   hover:bg-mainColors-header-nav-sub-button-bgActive;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  @apply duration-300 ease-in-out;
+.fade-dropdown-menu-enter-active,
+.fade-dropdown-menu-leave-active {
+  @apply transition-all duration-200 ease-in-out opacity-0;
 }
-.fade-enter,
-.fade-leave-to {
+.fade-dropdown-menu-enter,
+.fade-dropdown-menu-leave-to {
   @apply opacity-0;
 }
-.fade-leave,
-.fade-enter-to {
+.fade-dropdown-menu-enter-to,
+.fade-dropdown-menu-leave {
   @apply opacity-100;
 }
 </style>

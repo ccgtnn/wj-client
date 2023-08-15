@@ -4,7 +4,7 @@
   <footer>
     <div class="footer">
       <div class="footer__rosniivh rosniivh">
-        <img src="logo1.png" class="rosniivh__logo" />
+        <img src="/logo1.png" class="rosniivh__logo" />
         <div class="rosniivh__name">
           Федеральное государственное бюджетное учреждение Российский
           научно-исследовательский институт комплексного использования и охраны

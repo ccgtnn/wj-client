@@ -1,9 +1,12 @@
 import { defineStore } from 'pinia'
 import { Api } from '@/api'
-import { contentSchema, arrayContentSchema } from '../schemes/content.scheme'
+import {
+  contentValidator,
+  arrayContentValidator,
+} from '@/validators/content.validator'
 import { ref } from 'vue'
 import { useErrorsStore } from '@/stores/errors.store'
-import dataJson from '../ru.data.json'
+import dataJson from '@/ru.data.json'
 
 export const useContentsStore = defineStore('contents', () => {
   const contentsList = ref([])
@@ -12,8 +15,8 @@ export const useContentsStore = defineStore('contents', () => {
   // подключаем api
   const api = Api({
     API_URL: 'site/content/public',
-    scheme: contentSchema,
-    arrayScheme: arrayContentSchema,
+    validator: contentValidator,
+    arrayValidator: arrayContentValidator,
   })
 
   const getByName = (name) =>

@@ -8,5 +8,15 @@ body {
 }
 
 hr {
-  @apply text-mainColors-hr-bg;
+  @apply p-2
+    text-mainColors-hr-bg;
 }
+
+.a-regular {
+  @apply text-mainColors-link
+    hover:underline;
+}
+
+/* strong {
+  @apply font-bold;
+} */

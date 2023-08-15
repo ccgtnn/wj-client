@@ -12,18 +12,6 @@ const http = axios.create({
   },
 })
 
-// обработка запросов сервера
-http.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      config.headers.authorization = token
-    }
-    return config
-  },
-  (error) => Promise.reject(error)
-)
-
 // обработка ответов сервера
 http.interceptors.response.use(
   (response) => response,

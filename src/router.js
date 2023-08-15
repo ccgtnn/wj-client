@@ -17,6 +17,20 @@ const routes = [
           import(/* webpackChunkName: "app" */ './views/about/IndexedPage.vue'),
       },
       {
+        path: 'politic_access',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/about/PoliticAccessPage.vue'
+          ),
+      },
+      {
+        path: 'politic_personal_data',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/about/PoliticPersonalDataPage.vue'
+          ),
+      },
+      {
         path: 'editorial_board',
         component: () =>
           import(
