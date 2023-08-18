@@ -6,7 +6,7 @@ import {
 } from '@/validators/journal/issue.validator'
 import { ref } from 'vue'
 import { useErrorsStore } from '@/stores/errors.store'
-import dataJson from '@/issues.json'
+//import dataJson from '@/issues.json'
 
 export const useIssuesStore = defineStore('issues', () => {
   const issuesList = ref([])
@@ -14,7 +14,7 @@ export const useIssuesStore = defineStore('issues', () => {
 
   // подключаем api
   const api = Api({
-    API_URL: 'journal/issue/public',
+    API_URL: 'journal/issues/public',
     validator: issueValidator,
     arrayValidator: arrayIssueValidator,
   })
@@ -36,9 +36,9 @@ export const useIssuesStore = defineStore('issues', () => {
 
   const load = async () => {
     try {
-      //issuesList.value = await api.load()
+      issuesList.value = await api.load()
 
-      issuesList.value = dataJson
+      //issuesList.value = dataJson
       sort()
     } catch (error) {
       errorsStore.addError({ name: error.name, message: error.message })

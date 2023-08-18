@@ -18,7 +18,7 @@ const props = defineProps({
       {{ title }}
     </div>
     <div class="issue-item__link">
-      <a class="a-regular" :href="issueHyperlink">
+      <a class="a-regular">
         {{ issuesItem.name }}, {{ issuesItem.year }} год
       </a>
     </div>

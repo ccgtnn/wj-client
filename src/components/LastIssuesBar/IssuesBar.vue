@@ -13,12 +13,14 @@ const currentAndPrevIssue = computed(() => issuesStore.getCurrentAndPrevIssue())
     <div class="current-prev-issue__left">
       <img src="/journ1.png" width="200" alt="Обложка журанала" />
       <IssuesItem
+        v-if="currentAndPrevIssue[0]"
         title="Последний выпуск"
         :issues-item="currentAndPrevIssue[0]"
       />
     </div>
     <div class="current-prev-issue__right">
       <IssuesItem
+        v-if="currentAndPrevIssue[1]"
         title="Предыдущий выпуск"
         :issues-item="currentAndPrevIssue[1]"
       />
