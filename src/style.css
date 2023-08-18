@@ -15,10 +15,6 @@ hr {
   @apply hover:underline;
 }
 
-/* strong {
-  @apply font-bold;
-} */
-
 ._content {
   @apply space-y-4;
 }
