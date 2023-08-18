@@ -2,7 +2,7 @@
 import { useRoute } from 'vue-router'
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
-import IssuesBar from '../components/lastIssuesBar/IssuesBar.vue'
+import IssuesBar from '@/components/lastIssuesBar/IssuesBar.vue'
 
 const route = useRoute()
 </script>

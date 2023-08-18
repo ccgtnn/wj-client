@@ -1,21 +1,13 @@
 <script setup>
 import { defineProps } from 'vue'
 const props = defineProps({
-  data: {
+  issuesItem: {
     type: Object,
-    default: { id: 23, name: '№ 4', year: '2023', ord: 4 },
+    required: true,
   },
   title: {
     type: String,
-    default: 'Неизветно',
-  },
-  issueHyperlink: {
-    type: String,
-    default: 'https://waterjournal.ru/',
-  },
-  contentHyperlink: {
-    type: String,
-    default: 'https://waterjournal.ru/',
+    default: '',
   },
 })
 </script>
@@ -26,14 +18,12 @@ const props = defineProps({
       {{ title }}
     </div>
     <div class="issue-item__link">
-      <a class="a-regular" :href="issueHyperlink"
-        >{{ data.name }}, {{ data.year }} год</a
-      >
-    </div>
-    <div class="btns">
-      <a :href="contentHyperlink">
-        <AppButton> Содержание </AppButton>
+      <a class="a-regular" :href="issueHyperlink">
+        {{ issuesItem.name }}, {{ issuesItem.year }} год
       </a>
+    </div>
+    <div class="issue-item__actions">
+      <AppButton> Содержание </AppButton>
       <AppButton> Оформить подписку</AppButton>
     </div>
   </div>
@@ -41,7 +31,7 @@ const props = defineProps({
 
 <style scoped>
 .issue-item {
-  @apply flex flex-col space-y-3;
+  @apply space-y-3;
 }
 .issue-item__title {
   @apply text-2xl text-mainColors-header-issuesBar-text;
@@ -51,7 +41,7 @@ const props = defineProps({
   @apply text-xl text-mainColors-header-issuesBar-link;
 }
 
-.btns {
-  @apply flex flex-row space-x-4;
+.issue-item__actions {
+  @apply flex gap-4;
 }
 </style>

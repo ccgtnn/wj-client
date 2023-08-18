@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useIssuesStore } from '@/stores/journals/issues.store'
-import IssueItem from './IssueItem.vue'
+import IssuesItem from './IssuesItem.vue'
 
 const issuesStore = useIssuesStore()
 
@@ -11,33 +11,34 @@ const currentAndPrevIssue = computed(() => issuesStore.getCurrentAndPrevIssue())
 <template>
   <div class="current-prev-issue">
     <div class="current-prev-issue__left">
-      <img src="/journ1.png" alt="actual" />
-      <IssueItem
+      <img src="/journ1.png" width="200" alt="Обложка журанала" />
+      <IssuesItem
         title="Последний выпуск"
-        :data="currentAndPrevIssue[0]"
-        issueHyperlink="/"
+        :issues-item="currentAndPrevIssue[0]"
       />
     </div>
-
-    <IssueItem
-      title="Предыдущий выпуск"
-      :data="currentAndPrevIssue[1]"
-      issueHyperlink="/"
-      contentHyperlink="/"
-    />
+    <div class="current-prev-issue__right">
+      <IssuesItem
+        title="Предыдущий выпуск"
+        :issues-item="currentAndPrevIssue[1]"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .current-prev-issue {
-  @apply py-4 flex flex-row gap-5 items-start justify-center
+  @apply py-4 flex gap-6 items-center justify-center
   w-full 
   md:gap-60 md:flex-row;
 }
 .current-prev-issue__left {
-  @apply flex flex-row items-start gap-6;
+  @apply flex flex-row items-center gap-6;
+}
+.current-prev-issue__right {
+  @apply hidden md:block;
 }
 img {
-  @apply w-60 hidden md:flex;
+  @apply hidden sm:block;
 }
 </style>
