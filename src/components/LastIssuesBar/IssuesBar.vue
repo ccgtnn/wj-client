@@ -29,7 +29,9 @@ const currentAndPrevIssue = computed(() => issuesStore.getCurrentAndPrevIssue())
 <style scoped>
 .current-prev-issue {
   @apply py-4 flex gap-6 items-center justify-center
-  w-full 
+  w-full
+  bg-mainColors-header-issuesBar-bg
+  bg-opacity-5
   md:gap-60 md:flex-row;
 }
 .current-prev-issue__left {

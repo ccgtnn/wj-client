@@ -44,4 +44,8 @@ const props = defineProps({
 .issue-item__actions {
   @apply flex gap-4;
 }
+
+a {
+  @apply hover:border-b;
+}
 </style>

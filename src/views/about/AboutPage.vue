@@ -167,9 +167,9 @@ const data = computed(() => contentsStore.getByName('about-page'))
 </template>
 
 <style scoped>
-a {
+/* a {
   @apply text-mainColors-content-link;
-}
+} */
 .about-page {
   @apply container mx-auto flex flex-col md:flex-row;
 }
