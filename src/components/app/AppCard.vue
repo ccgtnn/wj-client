@@ -8,7 +8,7 @@ const props = defineProps({
   },
   customClass: {
     type: String,
-    default: 'outline-class',
+    default: 'default-class',
   },
 })
 
@@ -29,10 +29,8 @@ const activeClass = computed(() => `${props.customClass}__active`)
   @apply py-3 px-4 duration-300;
 }
 
-.outline-class {
-  @apply border-2 border-mainColors-card-outline-brd rounded-xl;
-}
-.outline-class__active {
-  @apply border-mainColors-card-outline-brdActive;
+.default-class {
+  @apply bg-mainColors-card-default-bg 
+  border-b-4 border-r-4 border-mainColors-card-default-brd;
 }
 </style>

@@ -14,7 +14,8 @@ const data = computed(() => contentsStore.getByName('about-page'))
       <div class="about-page__title">
         <AppH1>{{ data?.title }}</AppH1>
       </div>
-      <div class="about-page__content">
+
+      <div class="about-page__content _content">
         <AppH2 class="h2-title">
           Научно-практический журнал «Водное хозяйство России: проблемы,
           технологии, управление»
@@ -108,7 +109,7 @@ const data = computed(() => contentsStore.getByName('about-page'))
             ставит перед собой следующие <strong>задачи</strong>:
           </div>
           <div class="list__content">
-            <ul class="list-disc ul_bulletpoint">
+            <ul>
               <li>
                 публикация статей, соответствующих международным стандартам
                 использования концепций, исследовательских техник;
@@ -152,9 +153,9 @@ const data = computed(() => contentsStore.getByName('about-page'))
           <a
             class="a-regular"
             href="http://creativecommons.org/licenses/by-nc/4.0/"
-            >Creative Commons Attribution-NonCommercial 4.0 International
-            License</a
           >
+            Creative Commons Attribution-NonCommercial 4.0 International License
+          </a>
         </div>
       </div>
     </div>
@@ -167,39 +168,18 @@ const data = computed(() => contentsStore.getByName('about-page'))
 
 <style scoped>
 .about-page {
-  @apply flex flex-row container mx-auto md:flex md:justify-center;
+  @apply container mx-auto flex flex-col md:flex-row;
 }
 .about-page__left {
-  @apply pr-3 basis-3/4;
+  @apply p-4 md:basis-3/4;
+}
+.about-page__content {
+  @apply py-4;
 }
 .about-page__right {
-  @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
+  @apply md:basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
 }
 .about-page__title {
-  @apply py-4 flex justify-center;
-}
-
-.h2-title {
-  @apply py-4;
-}
-
-.text-regular {
-  @apply py-4;
-}
-
-.text-regular_sm {
-  @apply text-sm;
-}
-
-.list {
-  @apply list-disc;
-}
-
-.ul_bulletpoint {
-  @apply px-6 py-4;
-}
-
-.img-group {
-  @apply p-2 flex flex-row items-center;
+  @apply flex justify-center;
 }
 </style>

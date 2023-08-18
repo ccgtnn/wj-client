@@ -58,20 +58,12 @@ export default {
     },
   },
   card: {
-    light: {
-      bg: '#30363A',
-      bgActive: '#1d2b42',
-      brd: '#3D454A',
-    },
-    dark: {
-      bg: '#25282c',
-      bgActive: '#2a3740',
-      brd: '#202326',
+    default: {
+      bg: '#d6dbe4',
+      brd: '#c3c9d4',
     },
     outline: {
-      bgActive: '#283644',
-      brd: '#40484E',
-      brdActive: '#2b79d1',
+      brd: '#a9afb9',
     },
   },
   header: {

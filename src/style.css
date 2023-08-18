@@ -8,8 +8,7 @@ body {
 }
 
 hr {
-  @apply p-2
-    text-mainColors-hr-bg;
+  @apply text-mainColors-hr-bg;
 }
 
 .a-regular {
@@ -20,3 +19,20 @@ hr {
 /* strong {
   @apply font-bold;
 } */
+
+._content {
+  @apply space-y-4;
+}
+
+._content .list_bulletpoit ul {
+  @apply pl-8 py-2;
+  list-style: circle;
+}
+
+._content .text-regular_sm {
+  @apply text-sm;
+}
+
+._content .img-group {
+  @apply flex flex-row items-center gap-2;
+}
