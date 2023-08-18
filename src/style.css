@@ -13,8 +13,7 @@ hr {
 }
 
 .a-regular {
-  @apply text-mainColors-link
-    hover:underline;
+  @apply hover:underline;
 }
 
 /* strong {

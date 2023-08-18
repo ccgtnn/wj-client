@@ -2,7 +2,7 @@
 import { useRoute } from 'vue-router'
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
-import CurrentAndPrevIssue from '../components/CurrentAndPrevIssue.vue'
+import IssuesBar from '../components/lastIssuesBar/IssuesBar.vue'
 
 const route = useRoute()
 </script>
@@ -14,7 +14,7 @@ const route = useRoute()
 
   <div class="wrap">
     <TheHeader />
-    <CurrentAndPrevIssue v-if="route.path == '/'" />
+    <IssuesBar v-if="route.path == '/'" />
     <main>
       <RouterView></RouterView>
     </main>

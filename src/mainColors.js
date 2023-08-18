@@ -106,10 +106,17 @@ export default {
         },
       },
     },
+    issuesBar: {
+      text: '#fff',
+      link: '#97d0ff',
+    },
   },
   content: {
     right: {
       bg: '#d6dbe4',
+    },
+    link: {
+      DEFAULT: '#165292',
     },
   },
   footer: {
@@ -118,8 +125,5 @@ export default {
   },
   404: {
     text: '#fff',
-  },
-  link: {
-    DEFAULT: '#165292',
   },
 }
