@@ -101,6 +101,7 @@ export default {
     issuesBar: {
       text: '#fff',
       link: '#97d0ff',
+      bg: '#fff',
     },
   },
   content: {

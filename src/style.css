@@ -11,14 +11,6 @@ hr {
   @apply text-mainColors-hr-bg;
 }
 
-.a-regular {
-  @apply hover:underline;
-}
-
-/* strong {
-  @apply font-bold;
-} */
-
 ._content {
   @apply space-y-4;
 }
@@ -34,4 +26,9 @@ hr {
 
 ._content .img-group {
   @apply flex flex-row items-center gap-2;
+}
+
+._content a {
+  @apply text-mainColors-content-link
+  hover:border-b;
 }
