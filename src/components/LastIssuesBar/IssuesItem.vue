@@ -19,7 +19,7 @@ const props = defineProps({
     </div>
     <div class="issue-item__link">
       <a class="a-regular">
-        {{ issuesItem.name }}, {{ issuesItem.year }} год
+        № {{ issuesItem.number }}, {{ issuesItem.year }} год
       </a>
     </div>
     <div class="issue-item__actions">

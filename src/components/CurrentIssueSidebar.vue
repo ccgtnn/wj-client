@@ -18,7 +18,8 @@ const currentAndPrevIssue = computed(() => issuesStore.getCurrentAndPrevIssue())
     </div>
     <img src="/current-issue.jpg" class="current-issue__img" />
     <div class="current-issue__issue">
-      № {{ currentAndPrevIssue[0].name }}, {{ currentAndPrevIssue[0].year }} год
+      № {{ currentAndPrevIssue[0].number }},
+      {{ currentAndPrevIssue[0].year }} год
     </div>
   </div>
 </template>

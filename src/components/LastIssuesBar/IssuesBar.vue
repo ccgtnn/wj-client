@@ -32,7 +32,7 @@ const currentAndPrevIssue = computed(() => issuesStore.getCurrentAndPrevIssue())
 .current-prev-issue {
   @apply py-4 flex gap-6 items-center justify-center
   w-full
-  bg-mainColors-header-issuesBar-bg
+  bg-mainColors-header-bg
   bg-opacity-5
   md:gap-60 md:flex-row;
 }

@@ -102,7 +102,8 @@ const menuList = computed(() =>
 .menu-list__button {
   @apply px-4 pt-1 pb-1.5 
   flex space-x-2
-  text-mainColors-header-nav-button-text backdrop-brightness-110
+  text-mainColors-header-nav-button-text
+  bg-mainColors-header-bg bg-opacity-5
   text-lg rounded-full;
 }
 .menu-list__button_active {

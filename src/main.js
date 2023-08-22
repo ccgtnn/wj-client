@@ -6,7 +6,7 @@ import router from './router'
 
 let app = createApp(App)
 
-import globalComponents from './globalComponents'
+import globalComponents from './common/globalComponents'
 globalComponents(app)
 
 app.use(router).use(createPinia()).mount('#app')

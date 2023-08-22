@@ -24,11 +24,12 @@ const route = useRoute()
 
 <style scoped>
 .video {
-  @apply hidden md:block fixed top-0 left-0 w-full 
-  overflow-y-visible opacity-40 -z-10;
+  @apply fixed top-0 left-0 w-full 
+  overflow-y-visible opacity-50 -z-10;
+  min-width: 1280px;
 }
 .wrap {
-  @apply h-screen flex flex-col items-center;
+  @apply flex flex-col items-center;
 }
 main {
   @apply w-full flex-grow bg-mainColors-bg;

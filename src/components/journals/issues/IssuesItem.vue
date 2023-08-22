@@ -15,7 +15,7 @@ const yearsOptions = inject('yearsOptions')
 <template>
   <div class="issues-item">
     <div class="issues-item__name">
-      {{ issuesItem.name }}, {{ issuesItem.year }}
+      № {{ issuesItem.number }}, {{ issuesItem.year }} год
     </div>
     <NewMark v-if="issuesItem.isCurrent" />
     <div class="issues-item__actions">
@@ -37,7 +37,7 @@ const yearsOptions = inject('yearsOptions')
 }
 .issues-item__name {
   @apply text-mainColors-archive-issueItem-text
-  border-b border-transparent text-lg
+  border-b border-transparent
   cursor-pointer
   hover:text-mainColors-archive-issueItem-textHover 
   hover:border-mainColors-archive-issueItem-brdHover;

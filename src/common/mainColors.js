@@ -16,11 +16,6 @@ export default {
     bg: '#ffed4a',
     text: '#212529',
   },
-  archiveBox: {
-    bg: '#d6dbe4',
-    bgActive: '#b9bec9',
-    brd: '#198ec0',
-  },
   archive: {
     yearTitle: {
       bg: '#c3cad7',
@@ -67,6 +62,7 @@ export default {
     },
   },
   header: {
+    bg: '#bddbff',
     top: {
       isbn: {
         text: '#9addf9',
@@ -101,7 +97,6 @@ export default {
     issuesBar: {
       text: '#fff',
       link: '#97d0ff',
-      bg: '#fff',
     },
   },
   content: {

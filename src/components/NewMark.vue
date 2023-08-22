@@ -15,6 +15,6 @@ const data = computed(() => contentsStore.getByName('new-mark-comp'))
 
 <style scoped>
 .new-mark {
-  @apply p-1 inline text-sm bg-mainColors-newMark-bg rounded-lg;
+  @apply px-1.5 py-1 inline text-xs bg-mainColors-newMark-bg rounded-lg;
 }
 </style>

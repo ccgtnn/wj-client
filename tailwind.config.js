@@ -1,4 +1,4 @@
-import mainColors from './src/mainColors'
+import mainColors from './src/common/mainColors'
 
 /** @type {import('tailwindcss').Config} */
 export default {
