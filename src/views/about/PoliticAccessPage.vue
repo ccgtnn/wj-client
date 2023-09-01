@@ -6,7 +6,7 @@ import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
 
-const data = computed(() => contentsStore.getByName('indexed-page'))
+const data = computed(() => contentsStore.getByName('politic-access'))
 </script>
 
 <template>
