@@ -66,6 +66,48 @@
     }
   },
   {
+    "name": "recens",
+    "data": {
+      "title": "Рецензирование"
+    }
+  },
+  {
+    "name": "ethics",
+    "data": {
+      "title": "Издательская этика"
+    }
+  },
+  {
+    "name": "subscription",
+    "data": {
+      "title": "Подписка"
+    }
+  },
+  {
+    "name": "req_art",
+    "data": {
+      "title": "Требованиями к оформлению материалов"
+    }
+  },
+  {
+    "name": "politic-access",
+    "data": {
+      "title": "Политика открытого доступа"
+    }
+  },
+  {
+    "name": "politic-personal-data",
+    "data": {
+      "title": "Политика журнала по публикации персональных данных"
+    }
+  },
+  {
+    "name": "public-ethic",
+    "data": {
+      "title": "Публикационная этика"
+    }
+  },
+  {
     "name": "archive-page",
     "data": {
       "title": "Архив"

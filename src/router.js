@@ -34,13 +34,36 @@ const routes = [
         path: 'editorial_board',
         component: () =>
           import(
-            /* webpackChunkName: "app" */ './views/EditorialBoardPage.vue'
+            /* webpackChunkName: "app" */ './views/editors/EditorialBoardPage.vue'
+          ),
+      },
+      {
+        path: 'recens',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/editors/RecensPage.vue'
+          ),
+      },
+      {
+        path: 'ethics',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/editors/EthicsPage.vue'
           ),
       },
       {
         path: 'topics',
         component: () =>
-          import(/* webpackChunkName: "app" */ './views/TopicsPage.vue'),
+          import(
+            /* webpackChunkName: "app" */ './views/authors/TopicsPage.vue'
+          ),
+      },
+      {
+        path: 'req_art',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/authors/ReqArtPage.vue'
+          ),
       },
       {
         path: 'current_issue',
@@ -56,6 +79,20 @@ const routes = [
         path: 'contacts',
         component: () =>
           import(/* webpackChunkName: "app" */ './views/ContactsPage.vue'),
+      },
+      {
+        path: 'public_ethic',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/about/PublicEthicPage.vue'
+          ),
+      },
+      {
+        path: 'subscription',
+        component: () =>
+          import(
+            /* webpackChunkName: "app" */ './views/about/SubscriptionPage.vue'
+          ),
       },
     ],
   },

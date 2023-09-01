@@ -1,12 +1,11 @@
 <script setup>
 import { computed } from 'vue'
 import MajorEditorSidebar from '@/components/MajorEditorSidebar.vue'
-import CurrentIssueSidebar from '@/components/CurrentIssueSidebar.vue'
 import { useContentsStore } from '@/stores/content.store'
 
 const contentsStore = useContentsStore()
 
-const data = computed(() => contentsStore.getByName('politic-personal-data'))
+const data = computed(() => contentsStore.getByName('req_art'))
 </script>
 
 <template>
@@ -17,8 +16,6 @@ const data = computed(() => contentsStore.getByName('politic-personal-data'))
       </div>
     </div>
     <div class="page__right">
-      <CurrentIssueSidebar />
-      <hr />
       <MajorEditorSidebar />
     </div>
   </div>
