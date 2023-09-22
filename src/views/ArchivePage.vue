@@ -33,18 +33,54 @@ usePrepIssuesByYears({
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .page {
-  @apply container mx-auto 
-  md:flex md:justify-center md:space-x-4;
+  @include container(true);
+
+  @media (min-width: map-get($screen-widths, md)) {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 75%;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex-basis: 25%;
+    padding: 1rem;
+    background-color: map-get($bg-colors, content);
+
+    @media (min-width: map-get($screen-widths, md)) {
+      margin-left: 1em;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
-.page__left {
-  @apply basis-3/4;
-}
-.page__right {
-  @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
-}
-.page__title {
-  @apply py-4 flex justify-center;
-}
+
+// .page {
+//   @apply container mx-auto;
+//   md:flex md:justify-center md:space-x-4;;
+// }
+
+// .page__left {
+//   @apply basis-3/4;
+// }
+// .page__right {
+//   @apply basis-1/4 p-4 space-y-4 bg-mainColors-content-right-bg;
+// }
+// .page__title {
+//   @apply py-4 flex justify-center;
+// }
 </style>

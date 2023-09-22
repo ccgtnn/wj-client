@@ -1,0 +1,37 @@
+$screen-widths: (
+    sm: 640px,
+    md: 1120px,
+    xl: 1400px,
+);
+
+$bg-colors: (
+    main: #e1e2e4,
+    content: #d6dbe4,
+    header: #bddbff,
+    header-nav-button-active: #0b94ce,
+    header-nav-sub-button: #f5f6f8,
+    header-nav-sub-button-hover: #e4e8f1,
+    header-nav-sub-button-active: #0b94ce,
+    header-search-input: #fff
+);
+
+$text-colors: (
+    header-isbn: #9addf9,
+    header-title: #fff,
+    header-nav-button: #fff,
+    header-nav-sub-button-active: #fff,
+    header-search-input-text: #fff
+);
+
+$brd-colors: (
+    header-nav-sub: #e6e8ee,
+    header-search-input: #fff,
+    archive-issueList: #b8bbc3
+)
+
+// $text-sizes: (
+//     xs: 0.75rem,
+//     base: 1rem,
+//     xl: 1.25rem,
+//     3xl: 1.875rem
+// )
