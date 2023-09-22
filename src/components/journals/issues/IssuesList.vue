@@ -76,28 +76,59 @@ const setHeight = async (type) => {
   </transition>
 </template>
 
-<style scoped>
-.issues-list__item {
-  @apply p-2 border-b border-mainColors-archive-issueList-brd last:border-none;
+<style scoped lang="scss">
+.issues-list {
+  &__item {
+    padding: 0.5rem;
+    border-bottom-width: 1px;
+    border-color: map-get($brd-colors, archive-issueList);
+
+    &:last-child {
+      border: none;
+    }
+  }
 }
+
+.slide-down-issues {
+  &-enter-active,
+  &-leave-active {
+    transition: all;
+    @include ease-in-out;
+    transition-duration: 700ms;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    height: 0;
+    overflow: hidden;
+  }
+
+  &-enter-to,
+  &-leave-from {
+    overflow: hidden;
+  }
+}
+// .issues-list__item {
+//   @apply p-2 border-b border-mainColors-archive-issueList-brd last:border-none;
+// }
 
 /* Определение анимации слайд-дауна */
 
 /* Определите стили для начального и конечного состояний анимации */
-.slide-down-issues-enter-active,
-.slide-down-issues-leave-active {
-  @apply transition-all ease-in-out duration-700;
-}
+// .slide-down-issues-enter-active,
+// .slide-down-issues-leave-active {
+//   @apply transition-all ease-in-out duration-700;
+// }
 
 /* Начальное состояние для "enter" и конечное состояние для "leave" */
-.slide-down-issues-enter-from,
-.slide-down-issues-leave-to {
-  @apply h-0 overflow-hidden;
-}
+// .slide-down-issues-enter-from,
+// .slide-down-issues-leave-to {
+//   @apply h-0 overflow-hidden;
+// }
 
 /* Конечное состояние для "enter" и начальное состояние для "leave" */
-.slide-down-issues-enter-to,
-.slide-down-issues-leave-from {
-  @apply overflow-hidden;
-}
+// .slide-down-issues-enter-to,
+// .slide-down-issues-leave-from {
+//   @apply overflow-hidden;
+// }
 </style>
